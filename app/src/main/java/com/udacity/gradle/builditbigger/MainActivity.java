@@ -26,11 +26,12 @@ public class MainActivity extends AppCompatActivity {
         tellJoke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Joke joke = new Joke();
-                String ajoke=joke.getJoke();
-                Intent intent =new Intent(MainActivity.this, myAndroidLibraryActivity.class);
-                intent.putExtra("joke",ajoke);
-                startActivity(intent);
+//                Joke joke = new Joke();
+//                String ajoke=joke.getJoke();
+//                Intent intent =new Intent(MainActivity.this, myAndroidLibraryActivity.class);
+//                intent.putExtra("joke",ajoke);
+//                startActivity(intent);
+                tellJoke();
             }
         });
     }
@@ -58,13 +59,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view) {
+    public void tellJoke() {
 
-        Joke joke = new Joke();
-        String ajoke=joke.getJoke();
-        Toast.makeText(this, ajoke, Toast.LENGTH_SHORT).show();
+//        Joke joke = new Joke();
+//        String ajoke=joke.getJoke();
+//        Toast.makeText(this, ajoke, Toast.LENGTH_SHORT).show();
+//
+//        Intent intent=new Intent(this, myAndroidLibraryActivity.class );
 
-        Intent intent=new Intent(this, myAndroidLibraryActivity.class );
+        new EndpointsAsyncTask().execute(this);
 
     }
 
