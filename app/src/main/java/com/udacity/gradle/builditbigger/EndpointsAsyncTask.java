@@ -15,6 +15,8 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
+import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
+
 class EndpointsAsyncTask extends AsyncTask<Context,Void, String> {
     private static MyApi myApiService = null;
     private Context context;
@@ -52,7 +54,7 @@ class EndpointsAsyncTask extends AsyncTask<Context,Void, String> {
     protected void onPostExecute(String result) {
         Intent intent =new Intent(context, myAndroidLibraryActivity.class);
         intent.putExtra("joke",result);
-        context.startActivity(intent);
+        getApplicationContext().startActivity(intent);
 
     }
 }
