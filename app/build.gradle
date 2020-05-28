@@ -11,6 +11,13 @@ buildscript {
 }
 
 android {
+    signingConfigs {
+        paidtry {
+            storePassword 'password'
+            keyAlias = 'paidtry'
+            keyPassword 'password'
+        }
+    }
     compileSdkVersion 28
     buildToolsVersion "26.0.3"
 
