@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        Intent intent=new Intent(this, myAndroidLibraryActivity.class );
 
-        new EndpointsAsyncTask().execute(this);
+        new com.udacity.gradle.builditbigger.EndpointsAsyncTask().execute(this);
 
     }
 

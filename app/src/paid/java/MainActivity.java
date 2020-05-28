@@ -1,5 +1,3 @@
-package com.udacity.gradle.builditbigger;
-
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.android.androidlibrary.myAndroidLibraryActivity;
+import com.udacity.gradle.builditbigger.R;
 
 import jokes.Joke;
 import jokes.Main;
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        Intent intent=new Intent(this, myAndroidLibraryActivity.class );
 
-        new EndpointsAsyncTask().execute(this);
+        new com.udacity.gradle.builditbigger.EndpointsAsyncTask().execute(this);
 
     }
 

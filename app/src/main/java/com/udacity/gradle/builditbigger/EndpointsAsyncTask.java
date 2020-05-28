@@ -15,14 +15,14 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
-import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
+//import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 
-class EndpointsAsyncTask extends AsyncTask<Context,Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Context,Void, String> {
     private static MyApi myApiService = null;
     private Context context;
 
     @Override
-    protected String doInBackground(Context...params) {
+    public String doInBackground(Context...params) {
         if(myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -51,10 +51,10 @@ class EndpointsAsyncTask extends AsyncTask<Context,Void, String> {
     }
 
     @Override
-    protected void onPostExecute(String result) {
+    public void onPostExecute(String result) {
         Intent intent =new Intent(context, myAndroidLibraryActivity.class);
         intent.putExtra("joke",result);
-        getApplicationContext().startActivity(intent);
+        context.startActivity(intent);
 
     }
 }
