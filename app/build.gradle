@@ -11,6 +11,14 @@ buildscript {
 }
 
 android {
+
+
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "10g"
+    }
+    testBuildType "release"
+
     signingConfigs {
         paidtry {
             storePassword 'password'
